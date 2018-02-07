@@ -7,8 +7,11 @@
 ```
 # Create a Docker image tagged with the label "sia"
 $ sudo docker build --tag sia .
+# OR run jurby/sia container
 
 ```
+
+## run
 
 ```
 # NOTE: Replace 10.0.0.101 with the IP address of your Synology NAS on your
@@ -27,5 +30,5 @@ $ sudo docker run \
   --publish 9981:9981 \
   --publish 9982:9982 \
   --volume /nas/sia:/mnt/sia \
-  --name sia-container sia
+  --name sia-container jurby/sia
 ```
