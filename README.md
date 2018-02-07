@@ -32,3 +32,16 @@ $ sudo docker run \
   --volume /nas/sia:/mnt/sia \
   --name sia-container jurby/sia
 ```
+
+OR
+```
+# Create a Docker container based on the Sia image and start running it in the
+# background.
+$ sudo docker run \
+  --detach \
+  --publish "`hostname -I | cut -d' ' -f1`:9980:8000" \
+  --publish 9981:9981 \
+  --publish 9982:9982 \
+  --volume /nas/sia:/mnt/sia \
+  --name sia-container jurby/sia
+```
